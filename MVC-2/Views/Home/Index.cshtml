@@ -1,0 +1,28 @@
+﻿@using MVC_2.Models
+@{
+    List<Product> products = ViewBag.Products;
+    List<Brand> brands = ViewBag.Brands;
+}
+
+@if (products != null && products.Count > 0)
+{
+    <h2>Products</h2>
+    <ul>
+        @foreach (var product in products)
+        {
+            <li>@product.Name - $@product.Price</li>
+        }
+    </ul>
+
+    <h2>Brands</h2>
+    <ul>
+        @foreach (var brand in brands)
+        {
+            <li>@brand.Name : @brand.Description</li>
+        }
+    </ul>
+}
+else
+{
+    <p>No brands available.</p>
+}
